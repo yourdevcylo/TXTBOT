@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <style>
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #f0e68c;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-image: url('https://www.transparenttextures.com/patterns/paper.png');
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 0 #fff;
+    }
+
+    form {
+      background: #d3c6a8;
+      border: 2px solid #8b5a2b;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+      width: 300px;
+      text-align: center;
+    }
+
+    .input-container {
+      margin: 10px 0;
+    }
+
+    input[type="file"],
+    input[type="password"],
+    input[type="submit"] {
+      width: calc(100% - 20px);
+      padding: 10px;
+      border: 2px solid #8b5a2b;
+      border-radius: 5px;
+      font-size: 16px;
+      background: #fff;
+      color: #333;
+      transition: background 0.3s, border-color 0.3s;
+      box-sizing: border-box;
+    }
+
+    input[type="file"]:hover,
+    input[type="password"]:hover {
+      background: #f9f9f9;
+      border-color: #6b4f2a;
+    }
+
+    input[type="submit"] {
+      background: #8b5a2b;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-weight: bold;
+    }
+
+    input[type="submit"]:hover {
+      background: #6b4f2a;
+    }
+
+    input[type="submit"]:active {
+      box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+      transform: translateY(2px);
+    }
+  </style>
+</head>
+<body>
+  <form action="/upload" method="POST" enctype="multipart/form-data">
+    <h2>Admin Panel</h2>
+    <div class="input-container">
+      <input type="file" name="file" accept=".txt" required>
+    </div>
+    <div class="input-container">
+      <input type="password" name="password" placeholder="Set a password" required>
+    </div>
+    <div class="input-container">
+      <input type="submit" value="Upload File">
+    </div>
+  </form>
+</body>
+</html>
