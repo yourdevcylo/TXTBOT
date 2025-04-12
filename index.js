@@ -47,7 +47,7 @@ const receiptSessions = {};
 
 bot.start((ctx) => {
   ctx.replyWithPhoto('https://i.ibb.co/67hK6bLc/ONILOGO.jpg', {
-    caption: 'Welcome to the bot! Use /files to view uploaded text files.'
+    caption: '𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 𝐎𝐍𝐈𝐂𝐇𝐀𝐍 𝐁𝐎𝐓 𝐒𝐇𝐎𝐏\n\n𝐏𝐑𝐄𝐌𝐈𝐔𝐌 𝐓𝐗𝐓\n\n𝐔𝐒𝐄𝐑𝐍𝐀𝐌𝐄 𝐀𝐍𝐃 𝐏𝐀𝐒𝐒\n\n𝐀𝐕𝐀𝐈𝐋 𝐍𝐎𝐖 𝐁𝐀𝐒𝐈𝐂 𝐓𝐎 𝐔𝐒𝐄 𝐉𝐔𝐒𝐓 𝐒𝐄𝐍𝐃 𝐓𝐇𝐄 𝐑𝐄𝐂𝐄𝐈𝐏𝐓 𝐓𝐎 𝐓𝐇𝐄 𝐁𝐎𝐓 𝐓𝐇𝐀𝐍𝐊 𝐘𝐎𝐔𝐔𝐔𝐔𝐔\n\n𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑 @Nighative '
   });
 
   const userId = ctx.from.id;
@@ -82,7 +82,7 @@ bot.on('callback_query', async (ctx) => {
     userSessions[userId] = { fileId, waitingForReceipt: true };
     ctx.answerCbQuery();
     await ctx.replyWithPhoto('https://i.ibb.co/WNQtjwmc/toshicashg.jpg', {
-      caption: '📸 After payment, reply here with your GCash receipt.'
+      caption: '📸 𝐀𝐅𝐓𝐄𝐑 𝐏𝐀𝐘𝐌𝐄𝐍𝐓, 𝐑𝐄𝐏𝐋𝐘 𝐇𝐄𝐑𝐄 𝐖𝐈𝐓𝐇 𝐘𝐎𝐔𝐑 𝐑𝐄𝐂𝐄𝐈𝐏𝐓.'
     });
   }
 });
@@ -106,7 +106,7 @@ bot.on('photo', async (ctx) => {
     fileId: session.fileId
   };
 
-  await ctx.reply('✅ Receipt received. The admin will verify and send the password soon.');
+  await ctx.reply('✅ 𝐑𝐄𝐂𝐄𝐈𝐏𝐓 𝐑𝐄𝐂𝐄𝐈𝐕𝐄 ,𝐏𝐋𝐄𝐀𝐒𝐄 𝐖𝐀𝐈𝐓 𝐓𝐎 𝐓𝐇𝐄 𝐀𝐃𝐌𝐈𝐍 𝐓𝐎 𝐀𝐏𝐑𝐎𝐕𝐄 𝐘𝐎𝐔𝐑 𝐏𝐀𝐘𝐌𝐄𝐍𝐓.');
   delete userSessions[userId];
 });
 
@@ -140,7 +140,7 @@ bot.on('message', async (ctx) => {
     filename: file.name
   });
 
-  await ctx.telegram.sendMessage(userId, '✅ Your file has been unlocked by the admin.');
+  await ctx.telegram.sendMessage(userId, '✅ 𝐀𝐃𝐌𝐈𝐍 𝐂𝐎𝐍𝐅𝐈𝐑𝐌𝐄𝐃 𝐘𝐎𝐔𝐑 𝐏𝐀𝐘𝐌𝐄𝐍𝐓 ,𝐘𝐎𝐔𝐑 𝐓𝐗𝐓 𝐖𝐈𝐋𝐋 𝐁𝐄 𝐑𝐄𝐋𝐄𝐀𝐒𝐄𝐃');
   await File.deleteOne({ _id: file._id });
   fs.unlinkSync(tempPath);
 
@@ -162,7 +162,7 @@ async function sendFilesPage(ctx, userId, page) {
     Markup.button.callback('➡️ Next', 'PAGE_NEXT')
   ]);
 
-  ctx.reply(`📄 Page ${page + 1} of ${totalPages}`, Markup.inlineKeyboard(buttons));
+  ctx.reply(`𝐏𝐀𝐆𝐄  ${page + 1}𝐎𝐅  ${totalPages}`, Markup.inlineKeyboard(buttons));
 }
 
 async function updateFilesPage(ctx, userId, page, messageId) {
@@ -178,7 +178,7 @@ async function updateFilesPage(ctx, userId, page, messageId) {
     Markup.button.callback('➡️ Next', 'PAGE_NEXT')
   ]);
 
-  await ctx.telegram.editMessageText(ctx.chat.id, messageId, undefined, `📄 Page ${page + 1} of ${totalPages}`, {
+  await ctx.telegram.editMessageText(ctx.chat.id, messageId, undefined, `📄𝐏𝐀𝐆𝐄 e ${page + 1}𝐎𝐅f ${totalPages}`, {
     reply_markup: Markup.inlineKeyboard(buttons).reply_markup
   });
 }
