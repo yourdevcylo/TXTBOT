@@ -7,7 +7,7 @@ const os = require('os');
 const path = require('path');
 
 const BOT_TOKEN = '7782500660:AAGfIrsmgexkx6jVsRwVpnACu6EF6oL4jQg';
-const MONGO_URI = 'mongodb+srv://toshidev0:zcode22107@dbtxt.3dxoaud.mongodb.net/?retryWrites=true&w=majority&appName=DBTXT';
+const MONGO_URI = 'mongodb+srv://yourdevcylo:yourdevcylo1@txtbot-cluster.5lrmw36.mongodb.net/?retryWrites=true&w=majority&appName=txtbot-cluster';
 const PAGE_SIZE = 5;
 const ADMIN_ID = '7510486838';
 
